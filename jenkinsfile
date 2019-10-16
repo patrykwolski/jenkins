@@ -1,10 +1,11 @@
-properties([pipelineTriggers([upstream(threshold: 'UNSTABLE', upstreamProjects: '2')])])
-
-node {
-  stage ("pull") {
-      git 'https://github.com/patrykwolski/jenkins.git'
-  } 
-  stage ("check") {
-      sh "cat README.md"
-  }
+pipeline {
+    agent any 
+    stages {
+        stage('Example') {
+            steps {
+                sh 'env'
+                sh 'cat README.md'
+            }
+        }
+    }
 }
