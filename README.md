@@ -1,2 +1,2 @@
 # jenkins
-master1
+master
